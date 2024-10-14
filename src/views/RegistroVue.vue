@@ -7,14 +7,14 @@
           label="Nombre"
           required
         ></v-text-field>
-  
+
         <v-text-field
           v-model="usuario.email"
           :rules="[rules.required, rules.email]"
           label="Email"
           required
         ></v-text-field>
-  
+
         <v-text-field
           v-model="usuario.password"
           :rules="[rules.required]"
@@ -22,12 +22,12 @@
           type="password"
           required
         ></v-text-field>
-  
+
         <v-btn :disabled="!valid" @click="registrarUsuario">Registrar</v-btn>
       </v-form>
     </v-container>
   </template>
-  
+
   <script>
   export default {
     data() {
@@ -54,4 +54,3 @@
     }
   };
   </script>
-  

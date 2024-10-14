@@ -1,17 +1,17 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from '@/views/Home.vue';
-import Registro from '@/views/Registro.vue';
-import Campañas from '@/views/Campañas.vue';
+import { createRouter, createWebHistory } from 'vue-router'; // Importar el enrutador de Vue 3
+import Home from '@/views/HomeVue.vue';
+import Registro from '@/views/RegistroVue.vue';
+import Campanias from '@/views/CampaniasVue.vue';
 
-Vue.use(Router);
+const routes = [
+  { path: '/', component: Home },
+  { path: '/registro', component: Registro },
+  { path: '/campañas', component: Campanias }
+];
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    { path: '/', component: Home },
-    { path: '/registro', component: Registro },
-    { path: '/campañas', component: Campañas }
-  ]
+const router = createRouter({
+  history: createWebHistory(), // Usar modo 'history' en Vue Router 4
+  routes, // Definir las rutas
 });
 
+export default router;
